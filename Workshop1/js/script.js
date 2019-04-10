@@ -61,6 +61,7 @@ $(document).ready(function () {
                 data: bookDataFromLocalStorage,
                 pageSize: 20
             },
+            toolbar: kendo.template($("#searchbox").html()),
             width: 1000,
             height: 700,
             scrollable: true,
@@ -69,7 +70,6 @@ $(document).ready(function () {
                 input: true,
                 numeric: false
             },
-
             columns: [
                 {
                     command: [
@@ -90,14 +90,13 @@ $(document).ready(function () {
                     field: "BookDeliveredDate", title: "送達狀態", template: function (item) {
                         console.log(item.BookDeliveredDate);
                         if (item.BookDeliveredDate != undefined) {
-                            console.log('Hello there');
                             return "<i class=\"fas fa-truck\"></i>";
                         } else {
-                            console.log("NO");
                             return "";
                         }
-
-                    } },
+           
+                    } 
+                },
                 { field: "BookPrice", format: "{0:n0}元", title: "金額", attributes: { style: "text-align:right;" } },
                 { field: "BookAmount", title: "數量", attributes: { style: "text-align:right;" } },
                 { field: "BookTotal", format: "{0:n0}元", title: "總計", attributes: { style: "text-align:right;" } }
