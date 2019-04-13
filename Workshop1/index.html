@@ -13,6 +13,7 @@
 
     <title>圖書館</title>
 
+    <script src="./js/jquery-2.1.4.min.js"></script>
 </head>
 
 <body>
@@ -22,16 +23,12 @@
         </nav>
     </header>
     <main>
-        
         <div class="uk-container align-center">
             <button type="button" id="add_book" class="k-button k-primary btn-add-book">新增書籍</button>
             
                 <div class="book-grid-toolbar input">
                     <input id="searchbox" class="k-textbox"  placeholder="我想要找..." />
                 </div>
-            
-                
-            
             <div id="book_grid"></div>
             <div class="uk-card uk-text-left uk-width-1-3">
                 <div id="add_book_window">
@@ -93,8 +90,9 @@
     </main>
     <footer></footer>
     <script type="text/javascript" src="data/book-data.js"></script>
-    <script src="./js/jquery-2.1.4.min.js"></script>
     <script src="./js/kendo.all.min.js"></script>
+    <script src="js/kendo.culture.zh-TW.min.js"></script>
+    <script src="js/kendo.messages.zh-TW.min.js"></script>
     <script src="./js/uikit.min.js"></script>
     <script src="./js/script.js"></script>
 </body>

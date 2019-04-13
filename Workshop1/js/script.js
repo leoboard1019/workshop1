@@ -1,6 +1,5 @@
 
 var bookDataFromLocalStorage = [];
-
 var bookCategoryList = [
     { text: "資料庫", value: "database", src: "image/database.jpg" },
     { text: "網際網路", value: "internet", src: "image/internet.jpg" },
@@ -26,14 +25,8 @@ $(function () {
 
 $(document).ready(function () {
 
-    //載入中文語言包
-    $(function () {
-        // kendo.ui.progress($("#grid"), true); //會轉的動畫
-        var baseUrl = 'https://kendo.cdn.telerik.com/2019.1.220/js/messages/kendo.messages.zh-TW.min.js';
-        $.getScript(baseUrl, function () {    //getScript() 方法通過HTTP GET 請求載入並執行JavaScript 文件。
-            createGrid();
-        });
-    });
+    
+    
 
     //搜尋資料過濾
     $("#searchbox").keyup(function () {
@@ -55,7 +48,7 @@ $(document).ready(function () {
         });
     });
 
-    function createGrid() {
+   
         $("#book_grid").kendoGrid({
             dataSource: {
                 data: bookDataFromLocalStorage,
@@ -102,7 +95,7 @@ $(document).ready(function () {
                 { field: "BookTotal", format: "{0:n0}元", title: "總計", attributes: { style: "text-align:right;" } }
             ],
         });
-    };
+ 
 
     $(function createWindow() {
         $("#add_book_window").kendoWindow({
@@ -255,7 +248,7 @@ $(document).ready(function () {
     $("#delivered_datepicker").kendoDatePicker();
 
     $("#book_price").kendoNumericTextBox({
-        format: "c0",
+        format: "n0",
         min: 1,
         step: 1
     });
